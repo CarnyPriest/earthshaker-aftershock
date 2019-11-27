@@ -11,8 +11,8 @@ http://www.scottdanesi.com/?p=523
 https://github.com/scottdanesi/earthshaker-aftershock
 
 THIS IS A MODIFICATION OF THE ORIGINAL CODE
-DO NOT CONTACT THE ORIGINAL AUTHOR OF THE P-ROC PROJECT ABOUT THIS GAME CODE - THEY ARE TWO SEPERATE PROJECTS.  
-SEEK SUPPORT FOR THE VISUAL PINBALL VERSION AT http://vpuniverse.com
+DO NOT CONTACT THE ORIGINAL AUTHOR OF THE P-ROC PROJECT ABOUT THIS GAME CODE - THEY ARE TWO SEPARATE PROJECTS.  
+SEEK SUPPORT FOR THE VISUAL PINBALL VERSION AT http://vpuniverse.com/forums/topic/4250-p-roc-earthshaker-aftershock/
 
 This project is not affiliated with, or endorsed by WMS Gaming and/or whomever it is that currently holds the rights 
 to the pinball properties under the Williams name.
