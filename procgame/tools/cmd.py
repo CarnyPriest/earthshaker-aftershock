@@ -33,11 +33,11 @@ def main():
 		show_help = True
 	
 	if show_help:
-		print("""Usage: %s <command> <arg0> <arg1> ... <argN>""" % (os.path.basename(sys.argv[0])))
-		print("")
-		print("Commands:")
-		for name in sorted(commands.keys()):
-			print """  % -16s  %s""" % (name, commands[name])
+		#print("""Usage: %s <command> <arg0> <arg1> ... <argN>""" % (os.path.basename(sys.argv[0])))
+		#print("")
+		#print("Commands:")
+		#for name in sorted(commands.keys()):
+			#print """  % -16s  %s""" % (name, commands[name])
 		sys.exit(1)
 	
 	command_name = sys.argv[1]

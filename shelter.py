@@ -71,7 +71,7 @@ class Shelter(game.Mode):
 		pass
 
 	def update_lamps(self):
-		print "Update Lamps: Select Modes"
+		#print "Update Lamps: Select Modes"
 		self.game.utilities.log('Select Mode - Update Lamps','info')
 
 		self.refreshPlayerInfo()

@@ -51,7 +51,7 @@ class RightRampMode(game.Mode):
 			self.game.lamps.rightRoadSign.schedule(schedule=0x0F0F0F0F, cycle_seconds=0, now=False)
 		else:
 			self.game.lamps.rightRoadSign.disable()
-		print "Update Lamps: Right Ramp"
+		#print "Update Lamps: Right Ramp"
 
 	def disableRightRampLamps(self):
 		self.game.coils.jackpotFlasher.disable()

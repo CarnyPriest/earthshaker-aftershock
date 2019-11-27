@@ -77,7 +77,7 @@ class BaseGameMode(game.Mode):
 
 		self.game.rightramp_mode.resetFault()
 		
-		print "Game Started"
+		#print "Game Started"
 		
 	def start_ball(self):
 		self.game.utilities.log('Start Ball','info')
@@ -116,7 +116,7 @@ class BaseGameMode(game.Mode):
 		self.game.update_lamps()
 
 		#### Debug Info ####
-		print "Ball Started"
+		#print "Ball Started"
 
 	def finish_ball(self):
 		if (self.finishingBall == False):
@@ -171,7 +171,7 @@ class BaseGameMode(game.Mode):
 			#Last Player or Single Player Drained
 			if self.game.ball == self.game.balls_per_game:
 				#Last Ball Drained
-				print "Last ball drained, ending game"
+				#print "Last ball drained, ending game"
 				#self.end_game()
 				self.finish_game()
 			else:
@@ -181,7 +181,7 @@ class BaseGameMode(game.Mode):
 				self.start_ball()
 		else:
 			#Not Last Player Drained
-			print "Not last player drained"
+			#print "Not last player drained"
 			self.game.current_player_index += 1
 			self.start_ball()
 
@@ -289,8 +289,8 @@ class BaseGameMode(game.Mode):
 		self.end_game()
 		
 	def sw_startButton_active_for_20ms(self, sw):
-		print 'Player: ' + str(self.game.players.index)
-		print 'Ball' + str(self.game.ball)
+		#print 'Player: ' + str(self.game.players.index)
+		#print 'Ball' + str(self.game.ball)
 
 		if self.game.ball == 0:
 			if self.game.utilities.troughIsFull()==True:
@@ -309,7 +309,7 @@ class BaseGameMode(game.Mode):
 			#Add Player
 			#########################
 			self.game.add_player()
-			print 'Player Added - Total Players = ' + str(len(self.game.players))
+			#print 'Player Added - Total Players = ' + str(len(self.game.players))
 			if (len(self.game.players) == 2):
 				self.game.sound.play_voice('player_2_vox')
 				self.game.utilities.displayText(200,topText='PLAYER 2',bottomText='ADDED',seconds=1,justify='center')

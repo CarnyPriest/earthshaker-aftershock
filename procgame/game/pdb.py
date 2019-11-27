@@ -114,7 +114,7 @@ class Lamp(object):
 		if len(params) != 2: return False
 		for addr in params:
 			if not is_pdb_address(addr, self.pdb.aliases):
-				print "not pdb address!", addr
+				#print "not pdb address!", addr
 				return False
 		return True
 

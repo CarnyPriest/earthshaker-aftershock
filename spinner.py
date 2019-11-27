@@ -46,7 +46,7 @@ class Spinner(game.Mode):
 		self.resetSuperSpinner()
 
 	def update_lamps(self):
-		print "Update Lamps: Spinner"
+		#print "Update Lamps: Spinner"
 		# Super Spinner Lit #
 		if (self.superSpinnerLit == True):
 			self.game.lamps.inlaneRightSpinner.enable()

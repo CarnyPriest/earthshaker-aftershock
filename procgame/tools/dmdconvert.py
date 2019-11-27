@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.WARNING, format="%(asctime)s - %(name)s - %(le
 def load_and_append_image(anim, filename):
 	if not os.path.exists(filename):
 		return False
-	print "Appending", filename
+	#print "Appending", filename
 	
 	tmp = procgame.dmd.Animation().load(filename, allow_cache=False)
 	if len(tmp.frames) > 0:
@@ -31,7 +31,7 @@ def load_and_append_text(anim, filename, dot_map = {'0':0, '1':5, '2':10, '3':15
 	"""
 	if not os.path.exists(filename):
 		return False
-	print "Appending ", filename
+	#print "Appending ", filename
 	f = open(filename, 'r')
 	lines = f.readlines()
 	
@@ -43,7 +43,7 @@ def load_and_append_text(anim, filename, dot_map = {'0':0, '1':5, '2':10, '3':15
 		if len(line) == 0: break
 		w = len(line)
 		h += 1
-	print "Dimensions:", w, h
+	#print "Dimensions:", w, h
 	(anim.width, anim.height) = (w, h)
 	
 	frame = procgame.dmd.Frame(w, h)
@@ -85,7 +85,8 @@ def image_to_dmd(src_filenames, dst_filename):
 	else:
 		for filename in src_filenames:
 			if not os.path.exists(filename):
-				print 'File not found:', filename
+				#print 'File not found:', filename
+				pass
 	
 	for filename in src_filenames:
 		if filename.endswith('.txt'):
@@ -94,11 +95,11 @@ def image_to_dmd(src_filenames, dst_filename):
 			load_and_append_image(anim=anim, filename=filename)
 	
 	if len(anim.frames) == 0:
-		print "ERROR: No frames found!  Ensure that the source file(s) exist and are readable."
+		#print "ERROR: No frames found!  Ensure that the source file(s) exist and are readable."
 		sys.exit(1)
 	
 	anim.save(dst_filename)
-	print "Saved."
+	#print "Saved."
 
 
 def tool_populate_options(parser):

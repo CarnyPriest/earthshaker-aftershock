@@ -60,7 +60,7 @@ class SoundController(object):
 
     def register_sound(self, key, sound_file, new_sound_volume=1):
         """ """
-        self.logger.info("Registering sound - key: %s, file: %s", key, sound_file)
+        #self.logger.info("Registering sound - key: %s, file: %s", key, sound_file)
         if not self.enabled: return
         if os.path.isfile(sound_file):
             self.new_sound = mixer.Sound(str(sound_file))

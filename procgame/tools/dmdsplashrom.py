@@ -78,7 +78,7 @@ def check_params(fpga_base, input_path, output_path):
 	# Make sure input path is a .dmd filename
 	if not input_path.endswith(".dmd"): return 0
 	if not os.path.isfile(input_path):
-		print("\n\nERROR: Invalid filename: %s"%(input_path))
+		#print("\n\nERROR: Invalid filename: %s"%(input_path))
 		return 0
 	else:
 		# Check .dmd file dimensions
@@ -87,16 +87,16 @@ def check_params(fpga_base, input_path, output_path):
 		anim.populate_from_dmd_file(StringIO.StringIO(f.read()))
 		frame = anim.frames[0]
 		if frame.width != 128 or frame.height != 32:
-			print("\n\nERROR: .dmd file must be 128x32")
+			#print("\n\nERROR: .dmd file must be 128x32")
 			return 0
 
 	# Make sure requested watermark position is valid
 	wm_x = fpga_base['wm_x']
 	wm_y = fpga_base['wm_y']
 	if wm_x < 0 or wm_x > 91 or wm_y < 0 or wm_y > 26:
-		print("\n\nERROR: Invalid Watermark coordinates.")
-		print wm_x
-		print wm_y
+		#print("\n\nERROR: Invalid Watermark coordinates.")
+		#print wm_x
+		#print wm_y
 		return 0
 
 	# Make sure output path is a .p-roc filename
@@ -105,7 +105,7 @@ def check_params(fpga_base, input_path, output_path):
 
 def tool_run(options, args):
 	if len(args) != 4 and len(args) != 6:
-		print("\nERROR: Invalid parameters")
+		#print("\nERROR: Invalid parameters")
 		tool_get_usage()
 	else:
 		api_key = args[0]
@@ -124,7 +124,7 @@ def tool_run(options, args):
 
 
 		if (check_params(fpga_base_dict, input_path, output_path)==0):
-			print("\nERROR: Invalid parameters")
+			#print("\nERROR: Invalid parameters")
 			tool_get_usage()
 		else:
 			jobber = JobSubmitter(HOST, PORT, api_key)

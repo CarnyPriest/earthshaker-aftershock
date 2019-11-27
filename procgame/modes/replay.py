@@ -37,9 +37,9 @@ class Replay(Mode):
 				self.delay(name='replay_check', event_type=None, delay=0.3, handler=self.replay_check)
 				break
 
-		print "Replay scores: %s" % self.replay_scores
-		print "Replay achieved: %s" % self.replay_achieved
-		print "levels: %s" % self.num_levels
+		#print "Replay scores: %s" % self.replay_scores
+		#print "Replay achieved: %s" % self.replay_achieved
+		#print "levels: %s" % self.num_levels
 			
 	def set_replay_scores(self):
 		if self.replay_type == 'auto':

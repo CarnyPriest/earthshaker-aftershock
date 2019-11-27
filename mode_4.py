@@ -46,7 +46,7 @@ class Mode4(game.Mode):
 		self.game.update_lamps()
 
 	def update_lamps(self):
-		print "Update Lamps: Mode 4 Center 50k"
+		#print "Update Lamps: Mode 4 Center 50k"
 		self.game.lamps.centerRamp50k.schedule(schedule=0xF0F0F0F0, cycle_seconds=0, now=True)
 
 	def sw_centerRampMiddle_active(self, sw):

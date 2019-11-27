@@ -198,7 +198,7 @@ class UtilitiesMode(game.Mode):
 		self.updateBaseDisplay()
 
 	def updateBaseDisplay(self):
-		print "Update Base Display Called"
+		#print "Update Base Display Called"
 		if (self.currentDisplayPriority == 0 and self.game.tiltStatus == 0 and self.game.ball <> 0):
 
 			self.player1Score = ''

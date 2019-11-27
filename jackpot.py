@@ -55,9 +55,9 @@ class Jackpot(game.Mode):
 		self.update_lamps()
 
 	def update_lamps(self):
-		print "Update Lamps: Jackpot"
+		#print "Update Lamps: Jackpot"
 		self.jackpotLevel = self.game.utilities.get_player_stats('jackpot_level')
-		print 'Jackpot Update Lamps Called'
+		#print 'Jackpot Update Lamps Called'
 		
 
 		# Update Jackpot Value #

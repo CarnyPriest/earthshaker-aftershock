@@ -15,7 +15,7 @@ try:
 	import pygame
 	import pygame.locals
 except ImportError:
-	print "Error importing pygame; ignoring."
+	#print "Error importing pygame; ignoring."
 	pygame = None
 
 if hasattr(ctypes.pythonapi, 'Py_InitModule4'):
@@ -58,7 +58,8 @@ class Desktop():
 		if 'pygame' in globals():
 			self.setup_window()
 		else:
-			print 'Desktop init skipping setup_window(); pygame does not appear to be loaded.'
+			#print 'Desktop init skipping setup_window(); pygame does not appear to be loaded.'
+			pass
 		self.add_key_map(pygame.locals.K_LSHIFT, 3)
 		self.add_key_map(pygame.locals.K_RSHIFT, 1)
 

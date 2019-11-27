@@ -176,8 +176,8 @@ class Mode(object):
 			self.__delayed.sort(lambda x, y: int((x.time - y.time)*100))
 		except TypeError, ex:
 			# Debugging code:
-			for x in self.__delayed:
-				print(x)
+			#for x in self.__delayed:
+				#print(x)
 			raise ex
 		return name
 	
@@ -335,7 +335,7 @@ class ModeQueue(object):
 		# Sort by priority, descending:
 		self.modes.sort(lambda x, y: y.priority - x.priority)
 		self.changed = True
-		self.logger.info("Added %s.", str(mode))
+		#self.logger.info("Added %s.", str(mode))
 		mode.mode_started()
 		if mode == self.modes[0]:
 			mode.mode_topmost()
@@ -345,7 +345,7 @@ class ModeQueue(object):
 			if m == mode:
 				del self.modes[idx]
 				self.changed = True
-				self.logger.info("Removed %s.", str(mode))
+				#self.logger.info("Removed %s.", str(mode))
 				mode.mode_stopped()
 				break
 		if len(self.modes) > 0:

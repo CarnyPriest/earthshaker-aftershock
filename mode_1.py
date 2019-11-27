@@ -41,7 +41,7 @@ class Mode1(game.Mode):
 		self.game.utilities.set_player_stats('mode1_status',1)
 
 	def update_lamps(self):
-		print "Update Lamps: Mode 1 Jet Bumpers"
+		#print "Update Lamps: Mode 1 Jet Bumpers"
 		self.game.lamps.jetLeftLamp.schedule(schedule=0x000F000F, cycle_seconds=0, now=True)
 		self.game.lamps.jetRightLamp.schedule(schedule=0xF0F0F0F0, cycle_seconds=0, now=True)	
 		self.game.lamps.jetTopLamp.schedule(schedule=0x0F000F00, cycle_seconds=0, now=True)	

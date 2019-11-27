@@ -228,7 +228,7 @@ class GameController(object):
 		self.config = yaml.load(stream)
 		if not self.config:
 			raise ValueError, 'load_config_stream() could not load configuration.  Malformed YAML?'
-		print self.config
+		#print self.config
 		self.process_config()
 
 	def process_config(self):
@@ -494,7 +494,7 @@ class GameController(object):
 		event_type = event['type']
 		event_value = event['value']
 		if event_type == 99: # CTRL-C to quit
-			print "CTRL-C detected, quiting..."
+			#print "CTRL-C detected, quiting..."
 			self.end_run_loop()
 		elif event_type == pinproc.EventTypeDMDFrameDisplayed: # DMD events
 			#print "% 10.3f Frame event.  Value=%x" % (time.time()-self.t0, event_value)
@@ -515,7 +515,7 @@ class GameController(object):
 
 			if sw.state != recvd_state:
 				sw.set_state(recvd_state)
-				self.logger.info("%s:\t%s\t(%s)", sw.name, sw.state_str(),event_type)
+				#self.logger.info("%s:\t%s\t(%s)", sw.name, sw.state_str(),event_type)
 				self.modes.handle_event(event)
 				sw.reset_timer()
 			else:
@@ -567,7 +567,7 @@ class GameController(object):
 					self.proc.watchdog_tickle()
 					self.proc.flush()
 				if self.modes.changed:
-					self.modes.logger.info("Modes changed in last run loop cycle, now:")
+					#self.modes.logger.info("Modes changed in last run loop cycle, now:")
 					self.modes.log_queue()
 					self.modes.changed = False
 
@@ -578,6 +578,6 @@ class GameController(object):
 		finally:
 			if loops != 0:
 				dt = time.time()-self.t0
-				print "\nOverall loop rate: %0.3fHz\n" % (loops/dt)
+				#print "\nOverall loop rate: %0.3fHz\n" % (loops/dt)
 
 

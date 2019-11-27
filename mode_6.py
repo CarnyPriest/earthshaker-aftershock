@@ -41,7 +41,7 @@ class Mode6(game.Mode):
 		self.game.utilities.set_player_stats('mode6_status',1)
 
 	def update_lamps(self):
-		print "Update Lamps: Mode 6 Spinner"
+		#print "Update Lamps: Mode 6 Spinner"
 		self.game.lamps.inlaneRightSpinner.schedule(schedule=0x0F0F0F0F, cycle_seconds=0, now=False)
 		self.game.lamps.spinner.schedule(schedule=0x0F0F0F0F, cycle_seconds=0, now=False)		
 

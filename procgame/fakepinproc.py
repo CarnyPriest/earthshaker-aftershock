@@ -165,7 +165,7 @@ class FakePinPROCPlayback(FakePinPROC):
 		# Loop through all events that we should execute now
 		while len(self._event_timestamps) > 0 and self._event_timestamps[0] <= current_time:
 			evt = self._events[self._event_timestamps[0]]
-			print "[%s] [%s] Firing switch %s" % (str(current_time),str(self._event_timestamps[0]), evt['swname']) 
+			#print "[%s] [%s] Firing switch %s" % (str(current_time),str(self._event_timestamps[0]), evt['swname']) 
 			# Add the event to the event queue
 			events.append(evt)
 			# Remove the already processed events from our data structures so we don't process them again

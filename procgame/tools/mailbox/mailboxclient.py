@@ -32,8 +32,8 @@ class MailboxClient:
 		if resp.status == 200:
 			return resp_data
 		else:
-			print resp.status, resp.reason
-			print resp_data
+			#print resp.status, resp.reason
+			#print resp_data
 			return None
 
 	def poll_for_result(self, job_key):
@@ -62,8 +62,8 @@ class MailboxClient:
 			jobs_arr = json.loads(resp_data)
 			return jobs_arr
 		else:
-			print resp.status, resp.reason
-			print resp_data
+			#print resp.status, resp.reason
+			#print resp_data
 			return None
 	
 	def get_job_input(self, job_key):
@@ -76,8 +76,8 @@ class MailboxClient:
 		if resp.status == 200:
 			return resp_data
 		else:
-			print resp.status, resp.reason
-			print resp_data
+			#print resp.status, resp.reason
+			#print resp_data
 			return None
 
 	def submit_result(self, job_key, status_code, result_content_type, result_data):
@@ -97,8 +97,8 @@ class MailboxClient:
 		if resp.status == 200:
 			return resp_data
 		else:
-			print resp.status, resp.reason
-			print resp_data
+			#print resp.status, resp.reason
+			#print resp_data
 			return None
 
 
@@ -116,25 +116,25 @@ def main():
 		with open(dmd_path, 'rb') as f:
 			dmd_data = f.read()
 
-		print 'length:', len(dmd_data)
+		#print 'length:', len(dmd_data)
 
 		#job_key = client.submit_job(dmd_data, fpga_base, wm_x, wm_y)
 		job_key = client.submit_job(dmd_data, fpga_base)
-		print 'Got job key:', job_key
+		#print 'Got job key:', job_key
 
 	elif command == 'list':
 		timestamp = sys.argv[3]
 		jobs = client.list_jobs(timestamp)
-		for job in jobs:
-			print job['timestamp'], job['job_key']
+		#for job in jobs:
+			#print job['timestamp'], job['job_key']
 	
 	elif command == 'get_result':
 		job_key = sys.argv[3]
 		data = client.poll_for_result(job_key)
-		if data:
-			print 'get_result got %d bytes'%(len(data))
-		else:
-			print 'no result'
+		#if data:
+			#print 'get_result got %d bytes'%(len(data))
+		#else:
+			#print 'no result'
 	
 	elif command == 'put_result':
 		job_key = sys.argv[3]
@@ -145,7 +145,8 @@ def main():
 			client.submit_result(job_key, status_code, content_type, f.read())
 	
 	else:
-		print 'Unrecognized command.'
+		#print 'Unrecognized command.'
+		pass
 
 
 if __name__ == "__main__":

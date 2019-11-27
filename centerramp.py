@@ -50,7 +50,7 @@ class CenterRampMode(game.Mode):
 		pass
 
 	def update_lamps(self):
-		print "Update Lamps: Center Ramp"
+		#print "Update Lamps: Center Ramp"
 		### 2 Miles Lamp ###
 		if (self.enabled2Miles == True):
 			self.game.lamps.centerRamp2Miles.schedule(schedule=0x0F0F0F0F, cycle_seconds=0, now=True)

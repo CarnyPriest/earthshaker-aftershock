@@ -53,7 +53,7 @@ class Font(object):
         if len(self.__anim.frames) == 1:
             # We allow 1 frame for handmade fonts.
             # This is so that they can be loaded as a basic bitmap, have their char widths modified, and then be saved.
-            print "Font animation file %s has 1 frame; adding one" % (filename)
+            #print "Font animation file %s has 1 frame; adding one" % (filename)
             self.__anim.frames += [Frame(self.__anim.width, self.__anim.height)]
         elif len(self.__anim.frames) != 2:
             raise ValueError, "Expected 2 frames: %d" % (len(self.__anim.frames))
@@ -152,9 +152,10 @@ def init_font_path():
         elif issubclass(type(value), str):
             font_path.append(os.path.expanduser(value))
         elif value == None:
-            print('WARNING no font_path set in %s!' % (config.path))
+            #print('WARNING no font_path set in %s!' % (config.path))
+			pass
         else:
-            print('ERROR loading font_path from %s; type is %s but should be list or str.' % (config.path, type(value)))
+            #print('ERROR loading font_path from %s; type is %s but should be list or str.' % (config.path, type(value)))
             sys.exit(1)
     except ValueError, e:
         #print e

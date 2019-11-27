@@ -59,21 +59,21 @@ class Multiball(game.Mode):
 		pass
 
 	def update_lamps(self):
-		print "Update Lamps: Multiball"
+		#print "Update Lamps: Multiball"
 		self.disableLockLamps()
 		if (self.ballLock1Lit == True):
 			self.game.lamps.dropHoleLock.schedule(schedule=0xFF00FF00, cycle_seconds=0, now=True)
 			self.game.lamps.rightRampLock.schedule(schedule=0x00FF00FF, cycle_seconds=0, now=True)
 			self.game.lamps.ejectLock.schedule(schedule=0x0FF00FF0, cycle_seconds=0, now=True)
-			print "Lock 1 is Lit"
+			#print "Lock 1 is Lit"
 		elif (self.ballLock2Lit == True):
 			self.game.lamps.dropHoleLock.schedule(schedule=0xFF00FF00, cycle_seconds=0, now=True)
 			self.game.lamps.rightRampLock.schedule(schedule=0x00FF00FF, cycle_seconds=0, now=True)
-			print "Lock 2 is Lit"
+			#print "Lock 2 is Lit"
 		elif (self.ballLock3Lit == True):
 			self.game.lamps.dropHoleLock.schedule(schedule=0xFF00FF00, cycle_seconds=0, now=True)
 			self.game.lamps.rightRampLock.schedule(schedule=0x00FF00FF, cycle_seconds=0, now=True)
-			print "Lock 3 is Lit"
+			#print "Lock 3 is Lit"
 
 		if (self.game.utilities.get_player_stats('multiball_running') == True):
 			self.refreshMultiballZones()
@@ -145,16 +145,16 @@ class Multiball(game.Mode):
 		self.ballLock2Lit = self.game.utilities.get_player_stats('lock2_lit')
 		self.ballLock3Lit = self.game.utilities.get_player_stats('lock3_lit')
 		self.ballsLocked = self.game.utilities.get_player_stats('balls_locked')
-		print "Lock 1: " + str(self.game.utilities.get_player_stats('lock1_lit'))
-		print "Lock 2: " + str(self.game.utilities.get_player_stats('lock2_lit'))
-		print "Lock 3: " + str(self.game.utilities.get_player_stats('lock3_lit'))
-		print "Balls Locked: " + str(self.game.utilities.get_player_stats('balls_locked'))
+		#print "Lock 1: " + str(self.game.utilities.get_player_stats('lock1_lit'))
+		#print "Lock 2: " + str(self.game.utilities.get_player_stats('lock2_lit'))
+		#print "Lock 3: " + str(self.game.utilities.get_player_stats('lock3_lit'))
+		#print "Balls Locked: " + str(self.game.utilities.get_player_stats('balls_locked'))
 
 	def liteLock(self,callback):
 		self.callback = callback
 		if (self.ballsLocked == 0):
 			self.game.utilities.set_player_stats('lock1_lit',True)
-			print "Setting Ball 1 Lock to Lit"
+			#print "Setting Ball 1 Lock to Lit"
 			self.getUserStats()
 		elif (self.ballsLocked == 1):
 			self.game.utilities.set_player_stats('lock2_lit',True)
